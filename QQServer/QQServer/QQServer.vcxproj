@@ -86,7 +86,7 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)bin\intermediates\$(Configuration)\</IntDir>
-    <IncludePath>$(SolutionDir)mysql8.0\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)mysql8.0\include;$(SolutionDir)spdlog\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -163,7 +163,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\MySqlConnector.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="Timer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\includes.h" />
+    <ClInclude Include="src\MySqlConnector.h" />
+    <ClInclude Include="Timer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
